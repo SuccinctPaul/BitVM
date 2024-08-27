@@ -2548,7 +2548,6 @@ mod test {
         assert!(exec_result.success);
     }
 
-
     #[test]
     fn test_fflonk_verifier_as_chunks() {
         let (c0_x, c0_y, c0_z, c1_x, c1_y, c1_z, inp_1, inp_2) = (
@@ -2869,7 +2868,13 @@ mod test {
         };
         println!("fflonk.checkpairing_miller_loop = {} bytes", script.len());
         let interval = script.max_op_if_interval();
-        println!("Max if interval: {:?} difference: {}, debug info: {}, {}", interval, interval.1 - interval.0, script.debug_info(interval.0), script.debug_info(interval.1));
+        println!(
+            "Max if interval: {:?} difference: {}, debug info: {}, {}",
+            interval,
+            interval.1 - interval.0,
+            script.debug_info(interval.0),
+            script.debug_info(interval.1)
+        );
         let exec_result = execute_script_as_chunks(script, 3_000_000, 2_000_000);
         println!("{}", exec_result);
         assert!(exec_result.success);

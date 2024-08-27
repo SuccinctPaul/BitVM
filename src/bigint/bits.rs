@@ -643,7 +643,7 @@ mod test {
         let exec_result = execute_script(script);
         println!("result: {}", exec_result);
         assert!(exec_result.success);
-        
+
         let script = script! {
             { 0x00 }
             { 0x01 }

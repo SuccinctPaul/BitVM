@@ -443,7 +443,7 @@ pub fn blake3_160() -> Script {
 }
 
 pub fn blake3_160_var_length(num_bytes: usize) -> Script {
-    script!{
+    script! {
         { blake3_var_length( num_bytes ) }
         // Reduce the digest's length to 20 bytes
         for i in 0..12 {
@@ -552,7 +552,6 @@ mod tests {
         assert!(res.success);
     }
 
-
     #[test]
     fn test_blake3_var_length() {
         let hex_out = "11b4167bd0184b9fc8b3474a4c29d08e801cbc1596b63a5ab380ce0fc83a15cd";
@@ -590,7 +589,6 @@ mod tests {
 
         assert!(res.success);
     }
-
 
     #[test]
     fn test_blake3_160_var_length() {

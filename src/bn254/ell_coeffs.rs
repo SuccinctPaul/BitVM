@@ -81,9 +81,7 @@ impl G2HomProjective {
 }
 
 impl Default for G2Prepared {
-    fn default() -> Self {
-        Self::from(ark_bn254::G2Affine::generator())
-    }
+    fn default() -> Self { Self::from(ark_bn254::G2Affine::generator()) }
 }
 
 impl G2Prepared {
@@ -216,9 +214,7 @@ impl From<ark_bn254::G2Affine> for G2Prepared {
 }
 
 impl From<ark_bn254::G2Projective> for G2Prepared {
-    fn from(q: ark_bn254::G2Projective) -> Self {
-        q.into_affine().into()
-    }
+    fn from(q: ark_bn254::G2Projective) -> Self { q.into_affine().into() }
 }
 
 impl From<ark_G2Prepared<ark_bn254::Config>> for G2Prepared {
@@ -241,21 +237,15 @@ impl From<ark_G2Prepared<ark_bn254::Config>> for G2Prepared {
 }
 
 impl<'a> From<&'a ark_bn254::G2Affine> for G2Prepared {
-    fn from(other: &'a ark_bn254::G2Affine) -> Self {
-        (*other).into()
-    }
+    fn from(other: &'a ark_bn254::G2Affine) -> Self { (*other).into() }
 }
 
 impl<'a> From<&'a ark_bn254::G2Projective> for G2Prepared {
-    fn from(q: &'a ark_bn254::G2Projective) -> Self {
-        q.into_affine().into()
-    }
+    fn from(q: &'a ark_bn254::G2Projective) -> Self { q.into_affine().into() }
 }
 
 impl<'a> From<&'a ark_G2Prepared<ark_bn254::Config>> for G2Prepared {
-    fn from(q: &'a ark_G2Prepared<ark_bn254::Config>) -> Self {
-        q.to_owned().into()
-    }
+    fn from(q: &'a ark_G2Prepared<ark_bn254::Config>) -> Self { q.to_owned().into() }
 }
 
 pub fn mul_by_char(r: ark_bn254::G2Affine) -> ark_bn254::G2Affine {

@@ -293,7 +293,6 @@ mod test {
             0x77 OP_EQUALVERIFY
             0x77 OP_EQUAL
         });
-
     }
 
     // TODO: test the error cases: negative digits, digits > D, ...

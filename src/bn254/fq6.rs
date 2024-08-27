@@ -614,12 +614,12 @@ mod test {
     use crate::bn254::fq6::Fq6;
     use crate::bn254::utils::{fq2_push, fq6_push};
     use crate::treepp::*;
+    use ark_ff::AdditiveGroup;
     use ark_ff::Field;
     use ark_std::UniformRand;
     use core::ops::Mul;
     use rand::SeedableRng;
     use rand_chacha::ChaCha20Rng;
-    use ark_ff::AdditiveGroup;
 
     #[test]
     fn test_bn254_fq6_add() {

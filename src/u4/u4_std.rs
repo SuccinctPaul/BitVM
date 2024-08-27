@@ -130,16 +130,16 @@ impl CalculateOffset for i32 {
                 panic!("unexpected opcode: {:?}", element);
             }
         }
-        
+
         Script::new("").push_opcode(element)
     }
 }
 #[cfg(test)]
 mod tests {
 
+    use super::{u4_hex_to_nibbles, u4_repeat_number};
     use crate::treepp::{execute_script, script};
     use crate::u4::u4_std::u4_number_to_nibble;
-    use super::{u4_hex_to_nibbles, u4_repeat_number};
 
     #[test]
     fn test_repeat() {
