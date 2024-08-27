@@ -1,6 +1,7 @@
 use crate::bn254::fp254impl::Fp254Impl;
 use crate::bn254::fq::Fq;
 
+use crate::groth16::constants::LAMBDA;
 use ark_ff::UniformRand;
 use ark_ff::{Field, One};
 use num_bigint::BigUint;
@@ -8,7 +9,6 @@ use num_traits::{Num, ToPrimitive};
 use rand::SeedableRng;
 use rand_chacha::ChaCha20Rng;
 use std::str::FromStr;
-use crate::groth16::constants::LAMBDA;
 
 // refer table 3 of https://eprint.iacr.org/2009/457.pdf
 // a: Fp12 which is cubic residue
@@ -144,6 +144,7 @@ mod test {
     use crate::bn254::fq12::Fq12;
     use crate::bn254::pairing::Pairing;
     use crate::bn254::utils::fq12_push;
+    use crate::groth16::constants::{LAMBDA, P_POW3};
     use crate::treepp::*;
     use ark_bn254::Bn254;
     use ark_ec::pairing::Pairing as ArkPairing;
@@ -151,7 +152,6 @@ mod test {
     use ark_ec::{AffineRepr, CurveGroup};
     use ark_std::{end_timer, start_timer};
     use std::ops::Neg;
-    use crate::groth16::constants::{LAMBDA, P_POW3};
 
     #[test]
     fn test_checkpairing_with_c_wi_groth16() {
