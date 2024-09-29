@@ -7,12 +7,12 @@ exclude = ["tests"]
 [dependencies]
 #bitcoin-script = { path = "../rust-bitcoin-script"}
 #bitcoin-scriptexec = { path = "../rust-bitcoin-scriptexec"}
-bitcoin-script = { git = "https://github.com/BitVM/rust-bitcoin-script", branch= "chunker" }
+bitcoin-script = { git = "https://github.com/BitVM/rust-bitcoin-script", rev = "9c6074d1" }
 bitcoin = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm", features = ["rand-std"]}
 strum = "0.26"
 strum_macros = "0.26"
 hex = "0.4.3"
-bitcoin-scriptexec = { git = "https://github.com/BitVM/rust-bitcoin-scriptexec/"}
+bitcoin-scriptexec = { git = "https://github.com/BitVM/rust-bitcoin-scriptexec/", rev = "eeaea1a3"}
 serde = { version = "1.0.197", features = ["derive"] }
 num-bigint = "0.4.4"
 num-traits = "0.2.18"
