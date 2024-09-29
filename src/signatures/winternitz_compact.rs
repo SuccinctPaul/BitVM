@@ -245,7 +245,7 @@ mod test {
             script.len() as f64 / (N0 * 4) as f64
         );
 
-        run(script! {
+        let script = script! {
             { sign(MY_SECKEY, MESSAGE) }
             { checksig_verify(MY_SECKEY) }
 
@@ -292,8 +292,11 @@ mod test {
             0x7F OP_EQUALVERIFY
             0x77 OP_EQUALVERIFY
             0x77 OP_EQUAL
-        });
+        };
+        println!("winternitz sign_hash script size: {:} bytes", script.len());
 
+        let exec_result = execute_script(script);
+        assert!(exec_result.success);
     }
 
     // TODO: test the error cases: negative digits, digits > D, ...
